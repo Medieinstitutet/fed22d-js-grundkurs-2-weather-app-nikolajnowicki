@@ -11,6 +11,7 @@
 
  .container {
     width: 18.75rem;
+    height: 40rem;
     background-color: azure;
     display: block;
     margin: 0 auto;
@@ -34,16 +35,66 @@
     color: #293251;
 }
 
+.geo-notification {
+    background-color: #f8d7da;
+}
+
+.geo-notification p{
+    color: #721c24;
+    font-size: 1.2em;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.weather-container{
+    width: 18.75rem;
+    height: 260px;
+    background-color: #f4f9ff;
+}
+
 .weather-icon {
-    width: 70px;
-    height: 70px;
-    color: red;
+    width: 18.75rem;
+    height: 8rem;
 }
 
-.geo-notification {
-    background-color: #f8d7da;
+.weather-icon img {
+    display: block;
+    margin: 0 auto;
+    width:  9rem;
 }
 
-.geo-notification {
-    background-color: #f8d7da;
+.temperature-value {
+    width: 18.75rem;
+    height: 3.75rem; 
+}
+
+.temperature-value p {
+    padding: 0;
+    margin: 0;
+    color: #293251;
+    font-size: 4em;
+    text-align: center;
+}
+
+.temperature-value span {
+    color: #293251;
+    font-size: 0.5em;
+}
+
+.temperature-description p {
+    padding: 8px;
+    margin: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 1.2em;
+    padding-top: 24px;
+}
+
+.location p {
+    margin: 0;
+    padding: 0;
+    color: #293251;
+    text-align: center;
+    font-size: 1em;
 }
