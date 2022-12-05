@@ -37,6 +37,7 @@
 
 .geo-notification {
     background-color: #f8d7da;
+    display: none;
 }
 
 .geo-notification p{
@@ -67,9 +68,12 @@
 .temperature-value {
     width: 18.75rem;
     height: 3.75rem; 
+    margin: 0;
+    text-align: center;
 }
 
-.temperature-value p {
+
+#temperatureValue {
     padding: 0;
     margin: 0;
     color: #293251;
@@ -79,16 +83,17 @@
 
 .temperature-value span {
     color: #293251;
-    font-size: 0.5em;
+    font-size: 1em;
 }
 
-.temperature-description p {
+.temperature-description {
     padding: 8px;
     margin: 0;
     color: #293251;
     text-align: center;
-    font-size: 1.2em;
+    font-size: 1.7em;
     padding-top: 24px;
+    text-align: center;
 }
 
 .location p {
@@ -96,5 +101,10 @@
     padding: 0;
     color: #293251;
     text-align: center;
-    font-size: 1em;
+    font-size: 2em;
+
+}
+
+.cSpan {
+    font-size: 10px;
 }

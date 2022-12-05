@@ -9,29 +9,29 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
-  <title>Document</title>
+  <title>My Weather App</title>
 </head>
 
 <body>
   <div class="container">
     <div class="app-title">
-      <p>Weather</p>
+      <p>Today's Weather</p>
     </div>
-    <div class="geo-notification">
-      <p>Can't find geolocation</p>
+    <div class="geo-notification" id="geoNotification">
+      <p>-</p>
     </div>
     <div class="weather-container">
-      <div class="weather-icon">
+      <div class="weather-icon" id="weatherIcon">
         <img src="/public/icons/wi-day-cloudy.svg" alt="weather icon">
       </div>
-      <div class="temperature-value">
-        <p>24 ° <span>C</span></p>
+      <div class="temperature-value" id="temperatureValue">
+        <p class="temp-value">- ° <span class="cSpan">C</span></p>
       </div>
-      <div class="temperature-description">
-        <p>Cloudy</p>
+      <div class="temperature-description" id="temperatureDescription">
+        <p>-</p>
       </div>
       <div class="location">
-        <p>Helsingborg</p>
+        <p id="myLocation">-</p>
       </div>
     </div>
   </div>
