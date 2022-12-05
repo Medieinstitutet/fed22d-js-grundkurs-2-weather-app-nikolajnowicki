@@ -5,19 +5,33 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link rel="stylesheet" href="src/style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
   <title>Document</title>
 </head>
 
 <body>
-  <div class="weather-app">
-    <div class="container">
-      <p class="weather">The weather</p>
-      <h1 class="temp">2&#176</h1>
-      <div class="city-info">
-        <h2 class="city-name">Helsingborg</h2>
-        <span class="time">13:37</span> -
-        <span class="date">Sunday Dec 04</span>
+  <div class="container">
+    <div class="app-title">
+      <p>Weather</p>
+    </div>
+    <div class="geo-notification">
+      <p>Can't find geolocation</p>
+    </div>
+    <div class="weather-container">
+      <div class="weather-icon">
+        <img src="/public/icons/wi-day-cloudy.svg" alt="weather icon">
+      </div>
+      <div class="temperature-value">
+        <p>24 ° <span>C</span></p>
+      </div>
+      <div class="temperature-description">
+        <p>Cloudy</p>
+      </div>
+      <div class="location">
+        <p>Helsingborg</p>
       </div>
     </div>
   </div>
