@@ -64,6 +64,7 @@ function getWeather(latitude, longitude) {
 
     fetch(api).then(function(response){
         let data = response.json();
+        console.log(api)
         return data;
     })
     .then(function(data){
@@ -83,7 +84,7 @@ function getWeather(latitude, longitude) {
 //========================================================================
 
 function displayWeather() {
- // icon.innerHTML = `<img src="my icon goes here"/>`
+    icon.innerHTML = `<img src="/public/icons/${weather.iconId}.png"/>`
     temp.innerHTML = `${weather.temperature.value} °<span class="cSpan">C</span>`;
     desc.innerHTML = weather.description;
     myLocation.innerHTML = `${weather.city}, ${weather.country}`;
