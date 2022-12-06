@@ -12,7 +12,7 @@
 - Make application switch theme depending on time of day | preference in browser
 - Make a function that applies a png with rain/snow depending on weather condition
 - Maybe add weather animations
-- Change C -> F
+- Change Celcius to Farenheit
 
 ### Design
 
