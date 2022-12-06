@@ -23,6 +23,9 @@
 - Make prettier weather icons that match applications style
 - Layout for mobile/tablet users
 
+<details>
+<summary>FED22D JS Grundkurs Projektmall</summary>
+
 ## FED22D JS Grundkurs Projektmall
 
 Mall för projektuppgiften i JavaScript Grundkurs för FED22D.
@@ -78,3 +81,5 @@ För att aktivera din sajt live behöver du:
 2. Gå in i inställningarna för ditt repo (Settings), gå till fliken "General" och längst ner på sidan i "Danger Zone" ändrar du repots "visibility" till public.
 3. I samma "Settings"-flik på ditt repo, klicka på "Pages" i menyn till vänster.
 4. I "Branch"-dropdownen väljer du `gh-pages`.
+
+</details>
