@@ -84,7 +84,7 @@ function getWeather(latitude, longitude) {
 //========================================================================
 
 function displayWeather() {
-    icon.innerHTML = `<img src="/public/icons/${weather.iconId}.png"/>`
+    icon.innerHTML = `<img src="./public/icons/${weather.iconId}.png"/>`
     temp.innerHTML = `${weather.temperature.value} °<span class="cSpan">C</span>`;
     desc.innerHTML = weather.description;
     myLocation.innerHTML = `${weather.city}, ${weather.country}`;
