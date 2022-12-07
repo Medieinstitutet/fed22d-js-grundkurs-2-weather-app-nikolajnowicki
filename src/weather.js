@@ -1,4 +1,4 @@
-import { displayWeather, key, showError } from './main';
+import { displayWeather, key, showError } from './main.js';
 
 const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
 

@@ -1,4 +1,4 @@
-import { getWeatherByLatLong, getWeatherBySearch } from './weather';
+import { getWeatherByLatLong, getWeatherBySearch } from './weather.js';
 export const key = 'c6591c1b90538868d222b418445f608e';
 
 //========================================================================
