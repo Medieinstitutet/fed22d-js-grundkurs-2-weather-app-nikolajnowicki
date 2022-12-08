@@ -46,6 +46,7 @@ body {
   font-size: 1em;
   background-color: transparent;
   border: 0;
+  filter: drop-shadow(0 0 0.75rem crimson);
 }
 
 .fa-magnifying-glass {
@@ -61,12 +62,14 @@ body {
   width: 18.75rem;
   height: 40rem;
   background-color: azure;
-  // background-image: url('../../public/backgrounds/winter-day-mobile.png');
+  background-image: url('../../public/backgrounds/winter-day-mobile.png');
   display: block;
   margin: 0 auto;
   margin-top: 2rem;
   border-radius: 10px;
   padding-bottom: 3.125rem;
+  filter: drop-shadow(0 0 0.75rem rgba(26, 24, 25, 0.568));
+  color: #1d1f25;
 }
 
 .app-title {
@@ -76,17 +79,24 @@ body {
 }
 
 .app-title p {
+  position: relative;
   text-transform: uppercase;
   text-align: center;
   padding: 15px;
   margin: 0 auto;
   font-size: 1.6em;
-  color: #293251;
+  color: #1d1f25;
+  bottom: 10px;
 }
 
 .geo-notification {
   background-color: #f8d7da;
   display: none;
+  color: #721c24;
+  font-size: 1.2em;
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
 }
 
 .geo-notification p {
@@ -122,14 +132,13 @@ body {
 }
 
 .temperature-value span {
-  color: #293251;
   font-size: 0.75em;
 }
 
 .temperature-description {
   padding: 8px;
   margin: 0;
-  color: #293251;
+  color: #1d1f25;
   text-align: center;
   font-size: 1.7em;
   padding-top: 24px;
@@ -138,7 +147,7 @@ body {
 .location p {
   margin: 0;
   padding: 0;
-  color: #293251;
+  color: #1d1f25;
   text-align: center;
   font-size: 1.9em;
 }
