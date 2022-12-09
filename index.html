@@ -11,50 +11,53 @@
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/1e0542d540.js" crossorigin="anonymous"></script>
   <title>My Weather App</title>
-  <script type="module" crossorigin src="/js-template/assets/index.27c8d0fe.js"></script>
-  <link rel="stylesheet" href="/js-template/assets/index.5d701b93.css">
+  <script type="module" crossorigin src="/fed22d-js-grundkurs-2-weather-app-nikolajnowicki/assets/index.925db29f.js"></script>
+  <link rel="stylesheet" href="/fed22d-js-grundkurs-2-weather-app-nikolajnowicki/assets/index.0db56233.css">
 </head>
 
 <body>
-  <div class="search">
-    <form id="searchForm">
-      <input type="text" placeholder="City name" name="search" class="search-bar" id="searchBar">
-      <button type="submit" class="search-button" id="searchButton"><i
-          class="fa-solid fa-magnifying-glass"></i></button>
-    </form>
+  <div class="app">
+    <div class="container">
+      <div class="top-bar">
+        <div class="search">
+          <form id="searchForm">
+            <input type="text" placeholder="City name" name="search" class="search-bar" id="searchBar">
+            <button type="submit" class="search-button" id="searchButton"><i
+                class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div class="clock"></div>
+        <div class="display-date">
+          <span id="day">day</span> -
+          <span id="month">month</span>
+          <span id="daynum">00</span>
+          <span id="year">0000</span>
+        </div>
+      </div>
+      <div class="side-bar">
+
+        <div class="location">
+          <p id="myLocation">-</p>
+          <div class="geo-notification hidden" id="geoNotification"></div>
+          <div class="weather-container">
+            <div class="weather-icon" id="weatherIcon">
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAqFBMVEUAAAAEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwfYM8jSAAAAN3RSTlMAlWi7qzIlCvC2o29Awo6JyJuFDevi2tK/gX5gWE9FOy0pHhn7zHtzY/KyZTYGAvbn3lJMFbEPG4p/ZwAAA3tJREFUeNrt2dla4kAQBeBjkDXsi+yrKMiigst5/zebIVEyA+lOFwnOXPR/C5/EpvtUVQPLsizLsizLsizLspLxXFzXa9Vyr5/GP/BWaDLQKv/sQ9x/8FwFP2V2x3C3+BElqj3i6kbUesnium549OCm/U97H3VbPHrDFQXLn3Pwl22F31xczwO/FHGuyy89XEuKvkrE8/VxHXX6plBx6UsjIelK+5XkfJfvb7Ghz+SMIBFl/mnVNPnbY3qqSX98IAu9PT2j2GnPcEXDpMghngHDFRDNDyUHcSz4rVlb7Jf1PAWba8KDJ8Sw55f6M75s2ub/Vj7uLngPra4T8gXfskW3PpiqyjUP8rhYS5FnpQV8To6+wqcmEXEpl56hUUGuIUTfe2mMC9HjaAM50MS5Z++VG1xmyYMSFB55ooVzXs+WwmXaPLjXnLHoZrQQI4sa+i1cpaczAbYOfc841YuxC4faxJ3Rs4Fvp2hAhkHZECtoH7530vYpSl+aBw0IBTHWhkLqZOPX+Ntc8QCXrUBVO2G8nrw6CF+vcYwVeNAe4aeTkrgIf4A1D7aQm+b1M9Yq6LuDA/8a3hM8QWzapO8OKnOyc5q5t+FbpQSpWx5BqTg5K5sbRZq3PwYQyPIPGZhQLVeGR50MDKV5tEv1BJ/Pqb6fbcNE8NC5JQzR11WclcBSsv5FmHpSXkrsL7i4aJLCCtqhsmr12+XFcDiod4JJHhFq4vuNPj0raA3m9OWNNkAX5kxXzDW6u0lJ1x9vQTMUoRE1UgdFXlwzeQ8TL0FaaKe5AQS8qlgSJdwo4hFfIOENBgtRk3UXMQhX5K27I7tamkFhHaS/rHMdwtBYf8hqsi0YTB5L2TfW3iLUZydoLGWN26fwenOsWJ+WF2nyG8uiNDZchHJEKSQXzFNlhNrsgrC+lq2uKDZSkj0QZ94r6E+BTLqyhrmNNmqW8hxAVXYDsdce23d5EtboeZcNnGltczWHAH0V0fs7ETGxhrEpfQVRNXKirmVhjrIW7jVqVi1Js6hHj+jdnUR7wjLJeVY08kyS7YqzxYns3r0ErdzVfvocmf3O0BBMRiIr+gamJ4u5NRJzX6BygNSN1M3b8k185Q8e1c3arKtxBYmdMGGdm+2YvDokMismav4IsXS31MoxvtxdajHDZTJFx3XicZ3xDJZlWZZlWZZlWdb/6xfXGn+X4nuXXQAAAABJRU5ErkJggg==" alt="weather icon">
+            </div>
+            <div class="temperature-value" id="temperatureValue">
+              <p class="temp-value">- ° <span class="cSpan">C</span></p>
+            </div>
+            <div class="temperature-description" id="temperatureDescription">
+              <p>-</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main">Background goes here</div>
+      <div class="bottom-bar"></div>
+    </div>
   </div>
 
-  <!-- <div class="container-time">
-    <div class="display-date">
-      <span id="day">day</span>,
-      <span id="daynum">00</span>
-      <span id="month">month</span>
-      <span id="year">0000</span>
-    </div>
-    <div class="display-time"></div>
-  </div> -->
 
-  <div class="container">
-    <div class="app-title">
-      <p>Today's Weather</p>
-    </div>
-    <div class="geo-notification" id="geoNotification">
-    </div>
-    <div class="weather-container">
-      <div class="weather-icon" id="weatherIcon">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAAqFBMVEUAAAAEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwcEBwfYM8jSAAAAN3RSTlMAlWi7qzIlCvC2o29Awo6JyJuFDevi2tK/gX5gWE9FOy0pHhn7zHtzY/KyZTYGAvbn3lJMFbEPG4p/ZwAAA3tJREFUeNrt2dla4kAQBeBjkDXsi+yrKMiigst5/zebIVEyA+lOFwnOXPR/C5/EpvtUVQPLsizLsizLsizLspLxXFzXa9Vyr5/GP/BWaDLQKv/sQ9x/8FwFP2V2x3C3+BElqj3i6kbUesnium549OCm/U97H3VbPHrDFQXLn3Pwl22F31xczwO/FHGuyy89XEuKvkrE8/VxHXX6plBx6UsjIelK+5XkfJfvb7Ghz+SMIBFl/mnVNPnbY3qqSX98IAu9PT2j2GnPcEXDpMghngHDFRDNDyUHcSz4rVlb7Jf1PAWba8KDJ8Sw55f6M75s2ub/Vj7uLngPra4T8gXfskW3PpiqyjUP8rhYS5FnpQV8To6+wqcmEXEpl56hUUGuIUTfe2mMC9HjaAM50MS5Z++VG1xmyYMSFB55ooVzXs+WwmXaPLjXnLHoZrQQI4sa+i1cpaczAbYOfc841YuxC4faxJ3Rs4Fvp2hAhkHZECtoH7530vYpSl+aBw0IBTHWhkLqZOPX+Ntc8QCXrUBVO2G8nrw6CF+vcYwVeNAe4aeTkrgIf4A1D7aQm+b1M9Yq6LuDA/8a3hM8QWzapO8OKnOyc5q5t+FbpQSpWx5BqTg5K5sbRZq3PwYQyPIPGZhQLVeGR50MDKV5tEv1BJ/Pqb6fbcNE8NC5JQzR11WclcBSsv5FmHpSXkrsL7i4aJLCCtqhsmr12+XFcDiod4JJHhFq4vuNPj0raA3m9OWNNkAX5kxXzDW6u0lJ1x9vQTMUoRE1UgdFXlwzeQ8TL0FaaKe5AQS8qlgSJdwo4hFfIOENBgtRk3UXMQhX5K27I7tamkFhHaS/rHMdwtBYf8hqsi0YTB5L2TfW3iLUZydoLGWN26fwenOsWJ+WF2nyG8uiNDZchHJEKSQXzFNlhNrsgrC+lq2uKDZSkj0QZ94r6E+BTLqyhrmNNmqW8hxAVXYDsdce23d5EtboeZcNnGltczWHAH0V0fs7ETGxhrEpfQVRNXKirmVhjrIW7jVqVi1Js6hHj+jdnUR7wjLJeVY08kyS7YqzxYns3r0ErdzVfvocmf3O0BBMRiIr+gamJ4u5NRJzX6BygNSN1M3b8k185Q8e1c3arKtxBYmdMGGdm+2YvDokMismav4IsXS31MoxvtxdajHDZTJFx3XicZ3xDJZlWZZlWZZlWdb/6xfXGn+X4nuXXQAAAABJRU5ErkJggg==" alt="weather icon">
-      </div>
-      <div class="temperature-value" id="temperatureValue">
-        <p class="temp-value">- ° <span class="cSpan">C</span></p>
-      </div>
-      <div class="temperature-description" id="temperatureDescription">
-        <p>-</p>
-      </div>
-      <div class="location">
-        <p id="myLocation">-</p>
-      </div>
-    </div>
-  </div>
 
   
 </body>
