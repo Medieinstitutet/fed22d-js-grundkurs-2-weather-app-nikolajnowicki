@@ -1,6 +1,6 @@
 import { displayWeather, key, showError } from './main.js';
 
-const BASE_URL = 'http://api.openweathermap.org/data/2.5/weather';
+const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
 
 //========================================================================
 // Gets weather information from OpenWeather API
