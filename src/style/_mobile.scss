@@ -62,15 +62,10 @@ body {
 //========================================================================
 
 .container {
-  width: 18.75rem;
-  height: 40rem;
   background-color: azure;
-  background-image: url('../../public/backgrounds/winter-day-mobile.png');
+  // background-image: url('../../public/backgrounds/winter-day-mobile.png');
   display: block;
   margin: 0 auto;
-  margin-top: 2rem;
-  border-radius: 10px;
-  padding-bottom: 3.125rem;
   filter: drop-shadow(0 0 0.75rem rgba(26, 24, 25, 0.568));
   color: #1d1f25;
 }
@@ -94,7 +89,6 @@ body {
 
 .geo-notification {
   background-color: #f8d7da;
-  display: none;
   color: #721c24;
   font-size: 1.2em;
   margin: 0;
@@ -159,3 +153,19 @@ body {
 //========================================================================
 // Date & Time
 //========================================================================
+
+.clock {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
+}

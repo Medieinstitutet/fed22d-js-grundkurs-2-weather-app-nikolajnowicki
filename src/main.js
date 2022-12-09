@@ -51,8 +51,12 @@ async function setPosition(position) {
 //========================================================================
 
 export function showError(error) {
-  notification.style.display = 'block';
   notification.innerHTML = `${error.message}`;
+  notification.classList.remove('hidden');
+}
+
+export function hideError() {
+  notification.classList.add('hidden');
 }
 
 //========================================================================
@@ -60,6 +64,7 @@ export function showError(error) {
 //========================================================================
 
 export function displayWeather(data) {
+  hideError();
   const weather = data.weather[0];
   icon.innerHTML = `<img src="./icons/${weather.icon}.png"/>`;
   temp.innerHTML = `${Math.floor(data.main.temp - KELVIN)} °<span class="cSpan">C</span>`;
@@ -106,6 +111,7 @@ function clock() {
     return standIn;
   }
 }
+clock();
 setInterval(clock, 1000);
 
 // Date

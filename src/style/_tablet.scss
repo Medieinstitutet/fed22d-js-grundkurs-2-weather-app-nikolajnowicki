@@ -1,2 +1,20 @@
 @media screen and (min-width: 700px) {
+  .container {
+    width: 700px;
+    height: 40rem;
+    background-color: azure;
+    // background-image: url('../../public/backgrounds/winter-day-mobile.png');
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    margin-top: 2rem;
+    border-radius: 10px;
+    padding-bottom: 3.125rem;
+    filter: drop-shadow(0 0 0.75rem rgba(26, 24, 25, 0.568));
+    color: #1d1f25;
+  }
+}
+
+.clock {
+  display: none;
 }
