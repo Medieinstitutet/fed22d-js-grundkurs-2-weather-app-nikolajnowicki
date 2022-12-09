@@ -13,19 +13,15 @@ const notification = document.querySelector('#geoNotification');
 const searchForm = document.querySelector('#searchForm');
 
 //========================================================================
-// App Data
+// Variables
 //========================================================================
+
+const KELVIN = 273;
 
 const weather = {};
 weather.temperature = {
   unit: 'celsius',
 };
-
-//========================================================================
-// Variables
-//========================================================================
-
-const KELVIN = 273;
 
 //========================================================================
 // Does the browser allow geolocation?
@@ -90,47 +86,60 @@ searchForm.addEventListener('submit', async e => {
 // Date & Time
 //========================================================================
 
-// const displayTime = document.querySelector('.display-time');
-// function showTime() {
-//   let time = new Date();
-//   displayTime.innerText = time.toLocaleTimeString('en-US', { hour12: false });
-//   setTimeout(showTime, 1000);
-// }
+// Time
 
-// showTime();
+function clock() {
+  // We create a new Date object and assign it to a variable called "time".
+  var time = new Date(),
+    // Access the "getHours" method on the Date object with the dot accessor.
+    hours = time.getHours(),
+    // Access the "getMinutes" method with the dot accessor.
+    minutes = time.getMinutes(),
+    seconds = time.getSeconds();
 
-// // Date
-// function updateDate() {
-//   let today = new Date();
+  document.querySelectorAll('.clock')[0].innerHTML = printTime(hours) + ':' + printTime(minutes);
 
-//   // return number
-//   let dayName = today.getDay(),
-//     dayNum = today.getDate(),
-//     month = today.getMonth(),
-//     year = today.getFullYear();
+  function printTime(standIn) {
+    if (standIn < 10) {
+      standIn = '0' + standIn;
+    }
+    return standIn;
+  }
+}
+setInterval(clock, 1000);
 
-//   const months = [
-//     'January',
-//     'February',
-//     'March',
-//     'April',
-//     'May',
-//     'June',
-//     'July',
-//     'August',
-//     'September',
-//     'October',
-//     'November',
-//     'December',
-//   ];
-//   const dayWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-//   // value -> ID of the html element
-//   const IDCollection = ['day', 'daynum', 'month', 'year'];
-//   // return value array with number as a index
-//   const val = [dayWeek[dayName], dayNum, months[month], year];
-//   for (let i = 0; i < IDCollection.length; i++) {
-//     document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
-//   }
-// }
+// Date
+function updateDate() {
+  let today = new Date();
 
-// updateDate();
+  // return number
+  let dayName = today.getDay(),
+    dayNum = today.getDate(),
+    month = today.getMonth(),
+    year = today.getFullYear();
+
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+  const dayWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  // value -> ID of the html element
+  const IDCollection = ['day', 'daynum', 'month', 'year'];
+  // return value array with number as a index
+  const val = [dayWeek[dayName], dayNum, months[month]];
+  for (let i = 0; i < IDCollection.length; i++) {
+    document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+  }
+}
+
+updateDate();

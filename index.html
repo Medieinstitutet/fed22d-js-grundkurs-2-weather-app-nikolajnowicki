@@ -33,23 +33,31 @@
   </div> -->
 
   <div class="container">
-    <div class="app-title">
+    <!-- <div class="app-title">
       <p>Today's Weather</p>
-    </div>
-    <div class="geo-notification" id="geoNotification">
-    </div>
-    <div class="weather-container">
-      <div class="weather-icon" id="weatherIcon">
-        <img src="./public/icons/unknown.png" alt="weather icon">
+    </div> -->
+    <div class="location">
+      <p id="myLocation">-</p>
+      <div class="display-date">
+        <span id="day">day</span> -
+        <span id="month">month</span>
+        <span id="daynum">00</span>
+        <span id="year">0000</span>
       </div>
-      <div class="temperature-value" id="temperatureValue">
-        <p class="temp-value">- ° <span class="cSpan">C</span></p>
+      <div class="clock"></div>
+      <div class="geo-notification" id="geoNotification">
       </div>
-      <div class="temperature-description" id="temperatureDescription">
-        <p>-</p>
-      </div>
-      <div class="location">
-        <p id="myLocation">-</p>
+      <div class="weather-container">
+        <div class="weather-icon" id="weatherIcon">
+          <img src="./public/icons/unknown.png" alt="weather icon">
+        </div>
+        <div class="temperature-value" id="temperatureValue">
+          <p class="temp-value">- ° <span class="cSpan">C</span></p>
+        </div>
+        <div class="temperature-description" id="temperatureDescription">
+          <p>-</p>
+        </div>
+
       </div>
     </div>
   </div>
