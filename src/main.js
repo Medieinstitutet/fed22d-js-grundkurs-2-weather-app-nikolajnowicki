@@ -11,6 +11,10 @@ const desc = document.querySelector('#temperatureDescription');
 const myLocation = document.querySelector('#myLocation');
 const notification = document.querySelector('#geoNotification');
 const searchForm = document.querySelector('#searchForm');
+const windSpeed = document.querySelector('#wind');
+const humdid = document.querySelector('#humidity');
+const sunRise = document.querySelector('#sunRise');
+const sunSet = document.querySelector('#sunSet');
 
 //========================================================================
 // Variables
@@ -70,6 +74,10 @@ export function displayWeather(data) {
   temp.innerHTML = `${Math.floor(data.main.temp - KELVIN)} °<span class="cSpan">C</span>`;
   desc.innerHTML = weather.description;
   myLocation.innerHTML = `${data.name}, ${data.sys.country}`;
+  windSpeed.innerHTML = `Wind - ${Math.floor(data.wind.speed)} m/s`;
+  humdid.innerHTML = `Humidity - ${data.main.humidity}%`;
+  sunRise.innerHTML = data.sys.sunrise;
+  sunSet.innerHTML = data.sys.sunset;
 }
 
 //========================================================================
@@ -94,11 +102,8 @@ searchForm.addEventListener('submit', async e => {
 // Time
 
 function clock() {
-  // We create a new Date object and assign it to a variable called "time".
   var time = new Date(),
-    // Access the "getHours" method on the Date object with the dot accessor.
     hours = time.getHours(),
-    // Access the "getMinutes" method with the dot accessor.
     minutes = time.getMinutes(),
     seconds = time.getSeconds();
 
@@ -139,9 +144,7 @@ function updateDate() {
     'December',
   ];
   const dayWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  // value -> ID of the html element
   const IDCollection = ['day', 'daynum', 'month', 'year'];
-  // return value array with number as a index
   const val = [dayWeek[dayName], dayNum, months[month]];
   for (let i = 0; i < IDCollection.length; i++) {
     document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];

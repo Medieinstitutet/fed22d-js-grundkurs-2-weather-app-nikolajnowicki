@@ -4,9 +4,7 @@
 
 ### Functions
 
-- Make a ladning page with geo location button & search bar
 - Forecast for 5 days of weather
-- Add a digital clock to application
 - Display other values than temperature
 - Make background change depending on time of day / season
 - Make application switch theme depending on time of day | preference in browser

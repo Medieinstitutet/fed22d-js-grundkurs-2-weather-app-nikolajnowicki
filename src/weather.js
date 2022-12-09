@@ -11,7 +11,7 @@ export async function getWeatherByLatLong(latitude, longitude) {
 
   const response = await fetch(url);
   const data = await response.json();
-
+  console.log(data);
   return data;
 }
 
