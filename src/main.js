@@ -87,7 +87,7 @@ export function hideError() {
 // Render weather data in the DOM
 //========================================================================
 
-// Main Weather Card
+// Main Weather Card //
 
 export function displayWeather(data) {
   hideError();
@@ -102,7 +102,7 @@ export function displayWeather(data) {
   sunSet.innerHTML = data.sys.sunset;
 }
 
-// Forecast
+// Forecast Cards //
 
 export function displayForecast(dataForecast) {
   hideError();
@@ -213,7 +213,3 @@ function getWeekDay(date) {
   const options = { weekday: 'long' };
   return date.toLocaleString('en-us', options);
 }
-
-//========================================================================
-// Weather Forecast
-//========================================================================
