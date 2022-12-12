@@ -3,6 +3,13 @@
     background: #e1e1e1;
     font-family: 'Kanit', sans-serif;
     font-weight: 500;
+    background: #24c6dc; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #514a9d, #24c6dc); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to bottom,
+      #514a9d,
+      #24c6dc
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   }
 
   .app {
@@ -208,4 +215,43 @@
   .weather-data {
     font-size: 1rem;
   }
+}
+
+//========================================================================
+// Bottom Bar
+//========================================================================
+
+.forecastContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.forecastCard {
+  height: 140px;
+  width: 140px;
+  background-color: red;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: rgba(59, 59, 59, 0.336);
+}
+
+.forecastIcon img {
+  position: relative;
+  height: 75px;
+  margin: 0 auto;
+  bottom: 5px;
+}
+
+.forecastTemp {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.forecastDay {
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  bottom: 10px;
 }

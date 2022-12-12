@@ -1,4 +1,4 @@
-import { getWeatherByLatLong, getWeatherBySearch } from './weather.js';
+import { getWeatherByLatLong, getWeatherBySearch, getForecastByLatLong, getForecastBySearch } from './weather.js';
 export const key = 'c6591c1b90538868d222b418445f608e';
 
 //========================================================================
@@ -16,16 +16,17 @@ const humdid = document.querySelector('#humidity');
 const sunRise = document.querySelector('#sunRise');
 const sunSet = document.querySelector('#sunSet');
 
+// Forecast Elements //
+
+const tempForecast1 = document.querySelector('#forecastTemp1');
+const dayForecast1 = document.querySelector('#forecastDay1');
+const iconForecast1 = document.querySelector('#forecastIcon1');
+
 //========================================================================
 // Variables
 //========================================================================
 
 const KELVIN = 273;
-
-const weather = {};
-weather.temperature = {
-  unit: 'celsius',
-};
 
 //========================================================================
 // Does the browser allow geolocation?
@@ -48,6 +49,9 @@ async function setPosition(position) {
 
   const data = await getWeatherByLatLong(latitude, longitude);
   displayWeather(data);
+
+  const dataForecast = await getForecastByLatLong(latitude, longitude);
+  displayForecast(dataForecast);
 }
 
 //========================================================================
@@ -67,6 +71,8 @@ export function hideError() {
 // Render weather data in the DOM
 //========================================================================
 
+// Main Weather Card
+
 export function displayWeather(data) {
   hideError();
   const weather = data.weather[0];
@@ -76,8 +82,18 @@ export function displayWeather(data) {
   myLocation.innerHTML = `${data.name}, ${data.sys.country}`;
   windSpeed.innerHTML = `Wind - ${Math.floor(data.wind.speed)} m/s`;
   humdid.innerHTML = `Humidity - ${data.main.humidity}%`;
-  sunRise.innerHTML = data.sys.sunrise;
+  sunRise.innerHTML = data.sys.sunrise * 1000;
   sunSet.innerHTML = data.sys.sunset;
+}
+
+// Forecast
+
+export function displayForecast(dataForecast) {
+  hideError();
+  const forecastIcon1 = dataForecast.list[8].weather[0];
+  tempForecast1.innerHTML = `${Math.floor(dataForecast.list[8].main.temp - KELVIN)} °`;
+  dayForecast1.innerHTML = `${getWeekDay(new Date(dataForecast.list[6].dt * 1000))}`;
+  iconForecast1.innerHTML = `<img src="./icons/${forecastIcon1.icon}.png"/>`;
 }
 
 //========================================================================
@@ -93,13 +109,18 @@ searchForm.addEventListener('submit', async e => {
   if (data) {
     displayWeather(data);
   }
+
+  const dataForecast = await getForecastBySearch(search);
+  if (dataForecast) {
+    displayForecast(dataForecast);
+  }
 });
 
 //========================================================================
 // Date & Time
 //========================================================================
 
-// Time
+// Clock //
 
 function clock() {
   var time = new Date(),
@@ -119,15 +140,14 @@ function clock() {
 clock();
 setInterval(clock, 1000);
 
-// Date
+// Today's Date //
 function updateDate() {
   let today = new Date();
 
   // return number
   let dayName = today.getDay(),
     dayNum = today.getDate(),
-    month = today.getMonth(),
-    year = today.getFullYear();
+    month = today.getMonth();
 
   const months = [
     'January',
@@ -152,3 +172,12 @@ function updateDate() {
 }
 
 updateDate();
+
+function getWeekDay(date) {
+  const options = { weekday: 'long' };
+  return date.toLocaleString('en-us', options);
+}
+
+//========================================================================
+// Weather Forecast
+//========================================================================
