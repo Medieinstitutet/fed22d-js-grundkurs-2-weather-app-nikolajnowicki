@@ -106,7 +106,7 @@ export function displayWeather(data) {
 
 export function displayForecast(dataForecast) {
   hideError();
-  const forecastIcon1 = dataForecast.list[10].weather[0];
+  const forecastIcon1 = dataForecast.list[12].weather[0];
   tempForecast1.innerHTML = `${Math.floor(dataForecast.list[10].main.temp - KELVIN)} °`;
   dayForecast1.innerHTML = `${getWeekDay(new Date(dataForecast.list[10].dt * 1000))}`;
   iconForecast1.innerHTML = `<img src="./icons/${forecastIcon1.icon}.png"/>`;
