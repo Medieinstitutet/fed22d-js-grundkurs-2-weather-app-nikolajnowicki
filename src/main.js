@@ -22,6 +22,22 @@ const tempForecast1 = document.querySelector('#forecastTemp1');
 const dayForecast1 = document.querySelector('#forecastDay1');
 const iconForecast1 = document.querySelector('#forecastIcon1');
 
+const tempForecast2 = document.querySelector('#forecastTemp2');
+const dayForecast2 = document.querySelector('#forecastDay2');
+const iconForecast2 = document.querySelector('#forecastIcon2');
+
+const tempForecast3 = document.querySelector('#forecastTemp3');
+const dayForecast3 = document.querySelector('#forecastDay3');
+const iconForecast3 = document.querySelector('#forecastIcon3');
+
+const tempForecast4 = document.querySelector('#forecastTemp4');
+const dayForecast4 = document.querySelector('#forecastDay4');
+const iconForecast4 = document.querySelector('#forecastIcon4');
+
+const tempForecast5 = document.querySelector('#forecastTemp5');
+const dayForecast5 = document.querySelector('#forecastDay5');
+const iconForecast5 = document.querySelector('#forecastIcon5');
+
 //========================================================================
 // Variables
 //========================================================================
@@ -90,10 +106,30 @@ export function displayWeather(data) {
 
 export function displayForecast(dataForecast) {
   hideError();
-  const forecastIcon1 = dataForecast.list[8].weather[0];
-  tempForecast1.innerHTML = `${Math.floor(dataForecast.list[8].main.temp - KELVIN)} °`;
-  dayForecast1.innerHTML = `${getWeekDay(new Date(dataForecast.list[6].dt * 1000))}`;
+  const forecastIcon1 = dataForecast.list[10].weather[0];
+  tempForecast1.innerHTML = `${Math.floor(dataForecast.list[10].main.temp - KELVIN)} °`;
+  dayForecast1.innerHTML = `${getWeekDay(new Date(dataForecast.list[10].dt * 1000))}`;
   iconForecast1.innerHTML = `<img src="./icons/${forecastIcon1.icon}.png"/>`;
+
+  const forecastIcon2 = dataForecast.list[18].weather[0];
+  tempForecast2.innerHTML = `${Math.floor(dataForecast.list[18].main.temp - KELVIN)} °`;
+  dayForecast2.innerHTML = `${getWeekDay(new Date(dataForecast.list[18].dt * 1000))}`;
+  iconForecast2.innerHTML = `<img src="./icons/${forecastIcon2.icon}.png"/>`;
+
+  const forecastIcon3 = dataForecast.list[26].weather[0];
+  tempForecast3.innerHTML = `${Math.floor(dataForecast.list[26].main.temp - KELVIN)} °`;
+  dayForecast3.innerHTML = `${getWeekDay(new Date(dataForecast.list[26].dt * 1000))}`;
+  iconForecast3.innerHTML = `<img src="./icons/${forecastIcon3.icon}.png"/>`;
+
+  const forecastIcon4 = dataForecast.list[32].weather[0];
+  tempForecast4.innerHTML = `${Math.floor(dataForecast.list[32].main.temp - KELVIN)} °`;
+  dayForecast4.innerHTML = `${getWeekDay(new Date(dataForecast.list[32].dt * 1000))}`;
+  iconForecast4.innerHTML = `<img src="./icons/${forecastIcon4.icon}.png"/>`;
+
+  const forecastIcon5 = dataForecast.list[39].weather[0];
+  tempForecast5.innerHTML = `${Math.floor(dataForecast.list[39].main.temp - KELVIN)} °`;
+  dayForecast5.innerHTML = `${getWeekDay(new Date(dataForecast.list[39].dt * 1000))}`;
+  iconForecast5.innerHTML = `<img src="./icons/${forecastIcon5.icon}.png"/>`;
 }
 
 //========================================================================
