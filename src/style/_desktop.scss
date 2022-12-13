@@ -109,14 +109,13 @@
   }
 
   .weather-icon {
-    width: 300px;
-    height: 8rem;
   }
 
   .weather-icon img {
     display: block;
     margin: 0 auto;
-    width: 9rem;
+    height: 120px;
+    width: 120px;
   }
 
   .temperature-value {

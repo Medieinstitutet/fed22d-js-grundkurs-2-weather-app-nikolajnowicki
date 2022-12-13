@@ -92,7 +92,7 @@ export function hideError() {
 export function displayWeather(data) {
   hideError();
   const weather = data.weather[0];
-  icon.innerHTML = `<img src="./icons/${weather.icon}.png"/>`;
+  icon.innerHTML = `<img src="./icons/${weather.icon}.svg"/>`;
   temp.innerHTML = `${Math.floor(data.main.temp - KELVIN)} °<span class="cSpan">C</span>`;
   desc.innerHTML = weather.description;
   myLocation.innerHTML = `${data.name}, ${data.sys.country}`;
@@ -109,27 +109,27 @@ export function displayForecast(dataForecast) {
   const forecastIcon1 = dataForecast.list[12].weather[0];
   tempForecast1.innerHTML = `${Math.floor(dataForecast.list[10].main.temp - KELVIN)} °`;
   dayForecast1.innerHTML = `${getWeekDay(new Date(dataForecast.list[10].dt * 1000))}`;
-  iconForecast1.innerHTML = `<img src="./icons/${forecastIcon1.icon}.png"/>`;
+  iconForecast1.innerHTML = `<img src="./icons/${forecastIcon1.icon}.svg"/>`;
 
   const forecastIcon2 = dataForecast.list[18].weather[0];
   tempForecast2.innerHTML = `${Math.floor(dataForecast.list[18].main.temp - KELVIN)} °`;
   dayForecast2.innerHTML = `${getWeekDay(new Date(dataForecast.list[18].dt * 1000))}`;
-  iconForecast2.innerHTML = `<img src="./icons/${forecastIcon2.icon}.png"/>`;
+  iconForecast2.innerHTML = `<img src="./icons/${forecastIcon2.icon}.svg"/>`;
 
   const forecastIcon3 = dataForecast.list[26].weather[0];
   tempForecast3.innerHTML = `${Math.floor(dataForecast.list[26].main.temp - KELVIN)} °`;
   dayForecast3.innerHTML = `${getWeekDay(new Date(dataForecast.list[26].dt * 1000))}`;
-  iconForecast3.innerHTML = `<img src="./icons/${forecastIcon3.icon}.png"/>`;
+  iconForecast3.innerHTML = `<img src="./icons/${forecastIcon3.icon}.svg"/>`;
 
   const forecastIcon4 = dataForecast.list[32].weather[0];
   tempForecast4.innerHTML = `${Math.floor(dataForecast.list[32].main.temp - KELVIN)} °`;
   dayForecast4.innerHTML = `${getWeekDay(new Date(dataForecast.list[32].dt * 1000))}`;
-  iconForecast4.innerHTML = `<img src="./icons/${forecastIcon4.icon}.png"/>`;
+  iconForecast4.innerHTML = `<img src="./icons/${forecastIcon4.icon}.svg"/>`;
 
   const forecastIcon5 = dataForecast.list[39].weather[0];
   tempForecast5.innerHTML = `${Math.floor(dataForecast.list[39].main.temp - KELVIN)} °`;
   dayForecast5.innerHTML = `${getWeekDay(new Date(dataForecast.list[39].dt * 1000))}`;
-  iconForecast5.innerHTML = `<img src="./icons/${forecastIcon5.icon}.png"/>`;
+  iconForecast5.innerHTML = `<img src="./icons/${forecastIcon5.icon}.svg"/>`;
 }
 
 //========================================================================
