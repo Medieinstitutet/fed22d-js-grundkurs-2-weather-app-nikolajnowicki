@@ -10,6 +10,7 @@ body {
   background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
   font-family: 'Kanit', sans-serif;
   font-weight: 500;
+  // background-color: #272727;
 }
 
 //========================================================================
@@ -153,42 +154,10 @@ body {
 // Date & Time
 //========================================================================
 
-.hidden {
-  display: none;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:focus {
-  transition: background-color 600000s 0s, color 600000s 0s;
-}
-input[data-autocompleted] {
-  background-color: transparent !important;
-}
-
-//========================================================================
-// Hidden elements
-//========================================================================
-
-.weather-data {
-  display: none;
-}
-
-.sun-data {
-  display: none;
-}
-
-.display-date {
-  display: none;
-}
-
 .clock {
-  display: hidden;
-}
-
-.forecastContainer {
   display: none;
 }
 
-.forecastCard {
+.hidden {
   display: none;
 }

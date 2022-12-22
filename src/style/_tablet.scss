@@ -142,6 +142,24 @@
     font-size: 1.9em;
   }
 
+  .weather-data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 100px;
+    left: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .sun-data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
   //========================================================================
   // Top Bar
   //========================================================================
@@ -198,7 +216,7 @@
     color: #ffd868;
     display: inline-block;
     font-size: 24px;
-    right: 20px;
+    right: 18%;
   }
 
   // time //
@@ -210,6 +228,11 @@
 
   .weather-data {
     font-size: 1rem;
+    display: none;
+  }
+
+  .sun-data {
+    display: none;
   }
 }
 
