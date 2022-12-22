@@ -15,6 +15,7 @@ const windSpeed = document.querySelector('#wind');
 const humdid = document.querySelector('#humidity');
 const sunRise = document.querySelector('#sunRise');
 const sunSet = document.querySelector('#sunSet');
+const appBackground = document.querySelector('#background');
 
 // Forecast Elements //
 
@@ -109,27 +110,27 @@ export function displayForecast(dataForecast) {
   const forecastIcon1 = dataForecast.list[12].weather[0];
   tempForecast1.innerHTML = `${Math.floor(dataForecast.list[10].main.temp - KELVIN)} °`;
   dayForecast1.innerHTML = `${getWeekDay(new Date(dataForecast.list[10].dt * 1000))}`;
-  iconForecast1.innerHTML = `<img src="./icons/${forecastIcon1.icon}.svg"/>`;
+  iconForecast1.innerHTML = `<img src="./icons/forecast/${forecastIcon1.icon}.svg"/>`;
 
   const forecastIcon2 = dataForecast.list[18].weather[0];
   tempForecast2.innerHTML = `${Math.floor(dataForecast.list[18].main.temp - KELVIN)} °`;
   dayForecast2.innerHTML = `${getWeekDay(new Date(dataForecast.list[18].dt * 1000))}`;
-  iconForecast2.innerHTML = `<img src="./icons/${forecastIcon2.icon}.svg"/>`;
+  iconForecast2.innerHTML = `<img src="./icons/forecast/${forecastIcon2.icon}.svg"/>`;
 
   const forecastIcon3 = dataForecast.list[26].weather[0];
   tempForecast3.innerHTML = `${Math.floor(dataForecast.list[26].main.temp - KELVIN)} °`;
   dayForecast3.innerHTML = `${getWeekDay(new Date(dataForecast.list[26].dt * 1000))}`;
-  iconForecast3.innerHTML = `<img src="./icons/${forecastIcon3.icon}.svg"/>`;
+  iconForecast3.innerHTML = `<img src="./icons/forecast/${forecastIcon3.icon}.svg"/>`;
 
   const forecastIcon4 = dataForecast.list[32].weather[0];
   tempForecast4.innerHTML = `${Math.floor(dataForecast.list[32].main.temp - KELVIN)} °`;
   dayForecast4.innerHTML = `${getWeekDay(new Date(dataForecast.list[32].dt * 1000))}`;
-  iconForecast4.innerHTML = `<img src="./icons/${forecastIcon4.icon}.svg"/>`;
+  iconForecast4.innerHTML = `<img src="./icons/forecast/${forecastIcon4.icon}.svg"/>`;
 
   const forecastIcon5 = dataForecast.list[39].weather[0];
   tempForecast5.innerHTML = `${Math.floor(dataForecast.list[39].main.temp - KELVIN)} °`;
   dayForecast5.innerHTML = `${getWeekDay(new Date(dataForecast.list[39].dt * 1000))}`;
-  iconForecast5.innerHTML = `<img src="./icons/${forecastIcon5.icon}.svg"/>`;
+  iconForecast5.innerHTML = `<img src="./icons/forecast/${forecastIcon5.icon}.svg"/>`;
 }
 
 //========================================================================
@@ -174,6 +175,7 @@ function clock() {
   }
 }
 clock();
+updateBackground();
 setInterval(clock, 1000);
 
 // Today's Date //
@@ -213,3 +215,50 @@ function getWeekDay(date) {
   const options = { weekday: 'long' };
   return date.toLocaleString('en-us', options);
 }
+
+//========================================================================
+// Seasonal Wallpapers & Night / Day
+//========================================================================
+
+function updateBackground() {
+  const backgrounds = {
+    winter: {
+      day: 'winter_day_desktop.png',
+      night: 'winter_night_desktop.png',
+    },
+    spring: {
+      day: 'spring_day_desktop.png',
+      night: 'spring_night_desktop.png',
+    },
+    summer: {
+      day: 'summer_day_desktop.png',
+      night: 'summer_night_desktop.png',
+    },
+    fall: {
+      day: 'fall_day_desktop.png',
+      night: 'fall_night_desktop.png',
+    },
+  };
+
+  // Get the current month and time of day
+  let month = new Date().getMonth();
+  let hour = new Date().getHours();
+  let timeOfDay = hour >= 6 && hour < 18 ? 'day' : 'night';
+
+  // Determine the current season based on the month
+  let season;
+  if (month === 11 || month < 2) {
+    season = 'winter';
+  } else if (month >= 2 && month < 5) {
+    season = 'spring';
+  } else if (month >= 5 && month < 8) {
+    season = 'summer';
+  } else {
+    season = 'fall';
+  }
+
+  // Set the background image for the current season and time of day
+  appBackground.style.backgroundImage = "url('public/backgrounds/" + backgrounds[season][timeOfDay] + "')";
+}
+
+setInterval(updateBackground, 3600000);
