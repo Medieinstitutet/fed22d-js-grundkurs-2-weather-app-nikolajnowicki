@@ -92,6 +92,7 @@
     color: #721c24;
     font-size: 1.2em;
     margin: 0;
+
     padding: 10px 0;
   }
 
@@ -99,6 +100,7 @@
     color: #721c24;
     font-size: 1.2em;
     margin: 0;
+
     padding: 10px 0;
   }
 
@@ -141,6 +143,26 @@
     color: #ffd868;
     padding-top: 20px;
     font-size: 1.9em;
+  }
+
+  .weather-data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 100px;
+    left: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .sun-data {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 110px;
+    left: 20px;
+    gap: 10px;
+    justify-content: center;
   }
 
   //========================================================================
@@ -251,4 +273,12 @@
   text-align: center;
   font-size: 1.5rem;
   bottom: 10px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+  background-color: transparent !important;
 }

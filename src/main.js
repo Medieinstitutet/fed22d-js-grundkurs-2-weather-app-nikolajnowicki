@@ -97,10 +97,26 @@ export function displayWeather(data) {
   temp.innerHTML = `${Math.floor(data.main.temp - KELVIN)} °<span class="cSpan">C</span>`;
   desc.innerHTML = weather.description;
   myLocation.innerHTML = `${data.name}, ${data.sys.country}`;
-  windSpeed.innerHTML = `Wind - ${Math.floor(data.wind.speed)} m/s`;
+  windSpeed.innerHTML = `Wind speed - ${Math.floor(data.wind.speed)} m/s`;
   humdid.innerHTML = `Humidity - ${data.main.humidity}%`;
-  sunRise.innerHTML = data.sys.sunrise * 1000;
-  sunSet.innerHTML = data.sys.sunset;
+
+  // Sunrise & Sunset Converter //
+
+  // Get the Unix timestamps from the API
+  let sunriseTimestamp = data.sys.sunrise * 1000;
+  let sunsetTimestamp = data.sys.sunset * 1000;
+
+  // Convert the timestamps to Date objects
+  let sunriseDate = new Date(sunriseTimestamp);
+  let sunsetDate = new Date(sunsetTimestamp);
+
+  // Format the times using the toLocaleTimeString() method and a custom format string
+  let sunriseTime = sunriseDate.toLocaleTimeString('sv-SE', { hour: 'numeric', minute: 'numeric' });
+  let sunsetTime = sunsetDate.toLocaleTimeString('sv-SE', { hour: 'numeric', minute: 'numeric' });
+
+  // Use the formatted times to update the elements on the page
+  sunRise.innerHTML = `Sunrise: ${sunriseTime}`;
+  sunSet.innerHTML = `Sunset: ${sunsetTime}`;
 }
 
 // Forecast Cards //
