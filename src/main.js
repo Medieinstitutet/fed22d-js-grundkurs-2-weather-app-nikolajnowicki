@@ -274,7 +274,7 @@ function updateBackground() {
   }
 
   // Set the background image for the current season and time of day
-  appBackground.style.backgroundImage = "url('public/backgrounds/" + backgrounds[season][timeOfDay] + "')";
+  appBackground.style.backgroundImage = "url('./public/backgrounds/" + backgrounds[season][timeOfDay] + "')";
 }
 
 setInterval(updateBackground, 3600000);
