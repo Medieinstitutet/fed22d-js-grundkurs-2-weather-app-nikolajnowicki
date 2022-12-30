@@ -1,22 +1,107 @@
 <!DOCTYPE html>
-<html lang="en"> <!-- TODO: glöm ej att byta språk här -->
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Projekt</title>
-  </head>
-  <body>
-    <main>
-      <div class="app" id="app"></div> <!-- TODO: går bra att radera -->
-      <!-- TODO: skriv din kod här, innan script-taggen -->
-    </main>
+<html lang="en">
 
-    <!-- TODO
-    - Validera HTML (kopiera den renderade HTML-koden): https://validator.w3.org/#validate_by_input
-    - Kontrollera tillgänglighet: https://www.a11yproject.com/checklist/ & Chrome Lighthouse/Firefox Accessibility Tools
-    - Validera genererade CSS: https://jigsaw.w3.org/css-validator/#validate_by_input
-    -->
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/1e0542d540.js" crossorigin="anonymous"></script>
+  <title>My Weather App</title>
+</head>
+
+<body>
+  <div class="app">
+
+    <div class="container">
+      <div class="top-bar">
+        <div class="search">
+          <form id="searchForm">
+            <input type="text" placeholder="City name" name="search" class="search-bar" id="searchBar">
+            <button type="submit" class="search-button" id="searchButton"><i
+                class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+        <div class="clock"></div>
+        <div class="display-date">
+          <span id="day">day</span> -
+          <span id="month">month</span>
+          <span id="daynum">00</span>
+          <span id="year">0000</span>
+        </div>
+      </div>
+      <div class="side-bar">
+
+        <div class="location">
+          <p id="myLocation"></p>
+          <div class="geo-notification hidden" id="geoNotification"></div>
+          <div class="weather-container">
+            <div class="weather-icon" id="weatherIcon">
+              <!-- <img src="public/icons/unknown.png" alt=""> -->
+            </div>
+            <div class="temperature-value" id="temperatureValue">
+              <p class="temp-value"> <span class="cSpan"></span></p>
+            </div>
+            <div class="temperature-description" id="temperatureDescription">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="weather-data">
+          <p id="wind"></p>
+          <p id="humidity"></p>
+        </div>
+        <div class="sun-data">
+          <p id="sunRise"></p>
+          <p id="sunSet"></p>
+        </div>
+      </div>
+
+      <div class="main" id="background"></div>
+
+      <div class="bottom-bar">
+        <div class="forecastContainer">
+          <div class="forecastCard">
+            <div class="forecastIcon" id="forecastIcon1"></div>
+            <p class="forecastTemp" id="forecastTemp1"></p>
+            <p class="forecastDay" id="forecastDay1"></p>
+          </div>
+
+          <div class="forecastCard">
+            <div class="forecastIcon" id="forecastIcon2"></div>
+            <p class="forecastTemp" id="forecastTemp2"></p>
+            <p class="forecastDay" id="forecastDay2"></p>
+          </div>
+
+          <div class="forecastCard">
+            <div class="forecastIcon" id="forecastIcon3"></div>
+            <p class="forecastTemp" id="forecastTemp3"></p>
+            <p class="forecastDay" id="forecastDay3"></p>
+          </div>
+
+          <div class="forecastCard">
+            <div class="forecastIcon" id="forecastIcon4"></div>
+            <p class="forecastTemp" id="forecastTemp4"></p>
+            <p class="forecastDay" id="forecastDay4"></p>
+          </div>
+
+          <div class="forecastCard">
+            <div class="forecastIcon" id="forecastIcon5"></div>
+            <p class="forecastTemp" id="forecastTemp5"></p>
+            <p class="forecastDay" id="forecastDay5"></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="src/main.js" type="module"></script>
+</body>
+
 </html>
